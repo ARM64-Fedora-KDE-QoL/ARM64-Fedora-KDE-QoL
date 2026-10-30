@@ -71,6 +71,12 @@ Run it as your normal user, **not** with `sudo` in front. It asks for your passw
 
 Log out and back in afterwards.
 
+## Disk space and memory
+
+With both installed: **about 35 MB of disk space** plus Fedora's build packages (about 115 MB, more with what they pull in), and **about 5–10 MB of memory**. Nothing runs as its own program: the gesture plugin runs inside KWin, and the watchers exit as soon as they're done. Each folder's README has the breakdown.
+
+**Keep the build packages and `git` installed.** The automatic rebuilds after KWin and KDE updates use them. If you remove them, the gestures stop working after the next KWin update, and the cube patches are turned off after the next KDE update. Re-running `./install.sh` reinstalls them.
+
 ## Details and troubleshooting
 
 Each improvement's folder has a full README: what it changes on your system, how the automatic updates work, security notes, how to turn it off, and troubleshooting.
