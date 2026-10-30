@@ -8,8 +8,8 @@ One installer sets up everything below. Each improvement also has its own projec
 
 | Improvement | What it does | Own project |
 |---|---|---|
-| **3-Finger-Cube-Gesture** | 3-finger swipe **up** opens KDE's Desktop Cube; swipe **down** closes it. When the cube effect is turned off, those swipes go back to KDE. | [Cynders-dev/3-Finger-Cube-Gesture](https://github.com/ARM64-Fedora-KDE-QoL/3-Finger-Cube-Gesture) |
-| **Cube-Backside-Click** | Click the **back** of a desktop inside the open cube to switch to it (KDE's cube normally ignores that click). | [Cynders-dev/Cube-Backside-Click](https://github.com/ARM64-Fedora-KDE-QoL/Cube-Backside-Click) |
+| **3-Finger-Cube-Gesture** | 3-finger swipe **up** opens KDE's Desktop Cube; swipe **down** closes it. In the open cube, 3- or 4-finger swipes **left/right turn it smoothly with your fingers**, as far as you swipe. When the cube effect is turned off, those swipes go back to KDE. | [ARM64-Fedora-KDE-QoL/3-Finger-Cube-Gesture](https://github.com/ARM64-Fedora-KDE-QoL/3-Finger-Cube-Gesture) |
+| **Cube-Backside-Click** | Click the **back** of a desktop inside the open cube to switch to it (KDE's cube normally ignores that click). | [ARM64-Fedora-KDE-QoL/Cube-Backside-Click](https://github.com/ARM64-Fedora-KDE-QoL/Cube-Backside-Click) |
 
 Both **keep themselves working after Fedora updates**: they rebuild or refresh automatically when KDE or KWin is updated, and show a notification when they do.
 
@@ -17,7 +17,8 @@ Both **keep themselves working after Fedora updates**: they rebuild or refresh a
 
 | Release of this collection | 3-Finger-Cube-Gesture | Cube-Backside-Click |
 |---|---|---|
-| **v1.0** (current) | v3.0 | v1.0 |
+| **v2.0** (current) | v4.0 (adds smooth swiping) | v2.0 (shares the patched cube with smooth swiping) |
+| v1.0 | v3.0 | v1.0 |
 
 The copies in this repository's folders are maintained separately from the standalone projects, so this collection is updated and tested as a set.
 
@@ -47,14 +48,17 @@ cd ARM64-Fedora-KDE-QoL
 
 **Without git:** click **Code → Download ZIP**, extract it, open a terminal in the extracted folder, and run `bash install.sh`.
 
-Run it as your normal user, **not** with `sudo` in front. It asks for your password **once** at the start and then installs everything; the first run takes a few minutes. When it says **All done**, **log out and back in once** (needed to activate back-side clicking).
+Run it as your normal user, **not** with `sudo` in front. It asks for your password **once** at the start and then installs everything; the first run takes a few minutes. When it says **All done**, **log out and back in once** (needed to activate smooth swiping and back-side clicking).
 
 **Try it:**
 1. Swipe **up** with three fingers: the Desktop Cube opens.
-2. Click and drag downward to tilt the cube, then click the **back** of a desktop on the far side: you switch to it.
-3. Open the cube again and swipe **down** with three fingers: it closes.
+2. Swipe **left or right** with three fingers and watch the cube turn with your fingers. A short swipe goes one desktop; a long one can go all the way around. Lift your fingers and it snaps to a desktop.
+3. Click and drag downward to tilt the cube, then click the **back** of a desktop on the far side: you switch to it.
+4. Open the cube again and swipe **down** with three fingers: it closes.
 
-**Tip:** if you have several virtual desktops, turn on **System Settings → Window Management → Virtual Desktops → "Navigation wraps around"**. Then swiping left/right in the cube goes around the ring endlessly instead of stopping at the first and last desktop.
+**Upgrading from v1.0:** in your copy of this project, run `git pull` and then `./install.sh`, then log out and back in once.
+
+**Tip:** swiping left/right in the open cube always goes around the ring endlessly. To get the same with the cube closed (KDE's own 3-finger left/right desktop switching), turn on **System Settings → Window Management → Virtual Desktops → "Navigation wraps around"**.
 
 **Installing just one:** run `install.sh` inside that improvement's folder, e.g. `bash Cube-Backside-Click/install.sh`.
 

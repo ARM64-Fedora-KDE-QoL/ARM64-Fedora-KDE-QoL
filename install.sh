@@ -2,7 +2,8 @@
 # install.sh - ARM64-Fedora-KDE-QoL
 #
 # Installs every improvement in this collection, one after the other:
-#   1. 3-Finger-Cube-Gesture  - 3-finger swipe up/down opens/closes KDE's Desktop Cube
+#   1. 3-Finger-Cube-Gesture  - 3-finger swipe up/down opens/closes KDE's Desktop Cube, and
+#                                left/right turns it smoothly
 #   2. Cube-Backside-Click    - click the back of a desktop inside the cube to switch to it
 # Each one lives in its own folder here and can also be installed on its own with that
 # folder's install.sh. See README.md.
@@ -39,8 +40,9 @@ bash "$DIR/Cube-Backside-Click/install.sh"
 
 banner "All done"
 echo "Installed:"
-echo "  - 3-Finger-Cube-Gesture: 3-finger swipe up opens the Desktop Cube, swipe down closes it."
+echo "  - 3-Finger-Cube-Gesture: 3-finger swipe up opens the Desktop Cube, swipe down closes it,"
+echo "                           and left/right in the open cube turns it smoothly."
 echo "  - Cube-Backside-Click:   click the back of a desktop inside the cube to switch to it."
 echo
-echo "Log out and back in once to activate back-side clicking."
+echo "Log out and back in once to activate smooth swiping and back-side clicking."
 echo "Both keep themselves up to date after Fedora updates; you get a notification when they do."
